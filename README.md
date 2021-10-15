@@ -16,7 +16,7 @@
 
 :zap: WPFScrollControl
 ------
-![](https://github.com/lison999/WPFScroll/blob/main/ColumnFilterControl.gif) 
+![](https://github.com/lison999/WPFScroll/blob/main/ScrollControl.gif) 
 
 
 
