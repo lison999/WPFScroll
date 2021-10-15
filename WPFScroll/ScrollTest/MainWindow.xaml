@@ -1,0 +1,152 @@
+﻿<Window
+    x:Class="ScrollTest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:ScrollTest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+    Title="MainWindow"
+    Width="820"
+    Height="540"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Thickness x:Key="TabControlPadding">5</Thickness>
+        <Thickness x:Key="TabControlMargin">5,0,0,0</Thickness>
+
+        <Style x:Key="item1Style" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=IsActiveName,Path=Text}" Value="txtSectionA">
+                    <Setter Property="Selector.IsSelected" Value="True"/>
+                </DataTrigger>                
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="item2Style" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+            <Style.Triggers>
+               
+                <DataTrigger Binding="{Binding ElementName=IsActiveName,Path=Text}" Value="txtSectionB">
+                    <Setter Property="Selector.IsSelected" Value="True"/>
+                </DataTrigger>
+              
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="item3Style" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding ElementName=IsActiveName,Path=Text}" Value="txtSectionC">
+                    <Setter Property="Selector.IsSelected" Value="True"/>
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="item4Style" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding ElementName=IsActiveName,Path=Text}" Value="txtSectionD">
+                    <Setter Property="Selector.IsSelected" Value="True"/>
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="item10Style" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=IsActiveName,Path=Text}" Value="txtSectionE">
+                    <Setter Property="Selector.IsSelected" Value="True"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>      
+        <Grid>
+            <TextBlock x:Name="IsActiveName" Visibility="Collapsed"/>
+            <TabControl x:Name="DefaultTabControl" Height="500"
+                           Controls:TabControlHelper.Underlined="TabItems"
+                            TabStripPlacement="Left"
+                            Controls:HeaderedControlHelper.HeaderFontSize="18"
+                            Controls:TabControlHelper.UnderlinePlacement="Right"
+                             Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}"                        
+                    >
+                <TabItem Header="Item 1" Padding="{StaticResource TabControlPadding}" Style="{StaticResource item1Style}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <local:ScrollToControlAction ScrollViewer="{Binding ElementName=s}" TargetControl="{Binding ElementName=txtSectionA}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TabItem>
+                <TabItem Header="Item 2" Padding="{StaticResource TabControlPadding}" Style="{StaticResource item2Style}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <local:ScrollToControlAction ScrollViewer="{Binding ElementName=s}" TargetControl="{Binding ElementName=txtSectionB}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TabItem>
+                <TabItem Header="Item 3" Padding="{StaticResource TabControlPadding}" Style="{StaticResource item3Style}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <local:ScrollToControlAction ScrollViewer="{Binding ElementName=s}" TargetControl="{Binding ElementName=txtSectionC}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TabItem>
+                <TabItem Header="Item 4" Padding="{StaticResource TabControlPadding}" Style="{StaticResource item4Style}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <local:ScrollToControlAction ScrollViewer="{Binding ElementName=s}" TargetControl="{Binding ElementName=txtSectionD}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TabItem>
+                <TabItem Header="Item5" Padding="{StaticResource TabControlPadding}"/>
+                <TabItem Header="Item6" Padding="{StaticResource TabControlPadding}"/>
+                <TabItem Header="Item7" Padding="{StaticResource TabControlPadding}"/>
+                <TabItem Header="Item8" Padding="{StaticResource TabControlPadding}"/>
+                <TabItem Header="Item9" Padding="{StaticResource TabControlPadding}"/>
+                <TabItem Header="Item10" Padding="{StaticResource TabControlPadding}" Style="{StaticResource item10Style}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <local:ScrollToControlAction ScrollViewer="{Binding ElementName=s}" TargetControl="{Binding ElementName=txtSectionE}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TabItem>
+                <TabItem Header="Item11" Padding="{StaticResource TabControlPadding}"/>
+                <TabItem Header="Item12" Padding="{StaticResource TabControlPadding}"/>
+                <TabItem Header="Item13" Padding="{StaticResource TabControlPadding}"/>
+                <TabItem Header="Item14Item4Item4Item4Item4" Width="100" Padding="{StaticResource TabControlPadding}"/>
+            </TabControl>
+        </Grid>
+
+        <ScrollViewer x:Name="s" Grid.Column="1" local:ScrollToControlAction.ScrollToControl="True" local:ScrollToControlAction.IsActiveName="{Binding ElementName=IsActiveName,Path=Text,Mode=TwoWay}">
+            <StackPanel Margin="10,0">
+                <TextBlock x:Name="txtSectionA" Text="Section A" local:ScrollToControlAction.TargetControls="{Binding ElementName=txtSectionA}"/>
+                <Border
+                    Height="500"
+                    Margin="0,5"
+                    Background="#F2F2F2" />
+                <TextBlock x:Name="txtSectionB" Text="Section B" local:ScrollToControlAction.TargetControls="{Binding ElementName=txtSectionB}"/>
+                <Border
+                    Height="500"
+                    Margin="0,5"
+                    Background="#F2F2F2" />
+                <TextBlock x:Name="txtSectionC" Text="Section C" local:ScrollToControlAction.TargetControls="{Binding ElementName=txtSectionC}"/>
+                <Border
+                    Height="500"
+                    Margin="0,5"
+                    Background="#F2F2F2" />
+                <TextBlock x:Name="txtSectionD" Text="Section D" local:ScrollToControlAction.TargetControls="{Binding ElementName=txtSectionD}"/>
+                <Border
+                    Height="500"
+                    Margin="0,5"
+                    Background="#F2F2F2" />
+                <TextBlock x:Name="txtSectionE" Text="Section E" local:ScrollToControlAction.TargetControls="{Binding ElementName=txtSectionE}"/>
+                <Border
+                    Height="500"
+                    Margin="0,5"
+                    Background="#F2F2F2" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
