@@ -1,2 +1,22 @@
-# WPFScroll
- WPF 仿360设置、网易云音乐设置界面
+****
+
+|Author|lisong|
+|---|---
+|Email|273403522@qq.com
+|:sunny:|:blush::smile:
+
+****
+
+:zap:
+```
+程序中会有一些无关的代码或安装包，如果使用不到可以忽略！用自己所需部分。
+```
+
+:muscle::muscle:
+
+:zap: WPFScrollControl
+------
+![](https://github.com/lison999/WPFScroll/blob/main/ColumnFilterControl.gif) 
+
+
+
